@@ -17,11 +17,23 @@ p=Person(
 )
 # p.save()
 # classmethod create
-Person.objects.create(
-    first_name="Taro",last_name="Ito",
+# Person.objects.create(
+#     first_name="Taro",last_name="Ito",
+#     email="bb@meil.com",
+#     salary=20000,
+#     memo="class method 実行",
+#     web_site=None
+# )
+
+# get_or_create(取得 or 作成)
+
+obj,created=Person.objects.get_or_create(
+    first_name="Saburo",last_name="Ito",
     email="bb@meil.com",
-    salary=20000,
+    salary=40000,
     memo="class method 実行",
     web_site=None
 )
 
+print(obj)
+print(created)
