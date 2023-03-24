@@ -15,4 +15,13 @@ p=Person(
     birthday="2000-01-01",email="aa@mail.com",
     salary=None,memo="memo taro",web_site=""
 )
-p.save()
+# p.save()
+# classmethod create
+Person.objects.create(
+    first_name="Taro",last_name="Ito",
+    email="bb@meil.com",
+    salary=20000,
+    memo="class method 実行",
+    web_site=None
+)
+
