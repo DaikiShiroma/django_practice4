@@ -16,3 +16,11 @@ for person in persons:
 person=Person.objects.get(pk=1)
 
 print(person.id,person)
+
+# filter(絞込、エラーにならない、複数取得可)
+print("*"*100)
+persons=Person.objects.filter(first_name="Taro",id=1).all()
+print(persons)
+print(persons[0].email)
+for person in persons:
+    print(person.id,person)
