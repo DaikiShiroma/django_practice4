@@ -7,7 +7,10 @@ setup()
 from ModelApp.models import Students
 
 # 全件取得
-print(Students.objects.all())
+# print(Students.objects.all())
 
 # 頭5件取得
-print(Students.objects.all()[:5])
+# print(Students.objects.all()[:5])
+
+# 5件より後
+print(Students.objects.all()[5:])
