@@ -21,7 +21,13 @@ ids=[49,50,51]
 # )
 # p.save()
 
-print(Person.objects.filter(salary__isnull=True).all())
+# print(Person.objects.filter(salary__isnull=True).all())
 
 # レコードを取り除く(filter =>　exclude)
-print(Students.objects.exclude(name="太郎").all())
+# print(Students.objects.exclude(name="太郎").all())
+
+# 一部のカラムを取り除く
+# print(Students.objects.values("name","age").all().query)
+students=Students.objects.values("id","name","age").all()
+for student in students:
+    print(student["id"])
