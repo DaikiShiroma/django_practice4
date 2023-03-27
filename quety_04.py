@@ -13,6 +13,13 @@ from ModelApp.models import Students,schools
 # for student in Students.objects.filter(school__name="南高校").all():
 #     print(student.name,student.school.name,student.school.prefecture.name)    
 
-# 
-for student in Students.objects.exclude(school__name="南高校").all():
-    print(student.name,student.school.name,student.school.prefecture.name) 
+# 外部テーブルで取り除く
+# for student in Students.objects.exclude(school__name="南高校").all():
+#     print(student.name,student.school.name,student.school.prefecture.name)
+
+# print(schools.objects.filter(students__name="太郎").all().query)
+
+print("-"*100)
+
+for student in Students.objects.order_by("school__name").all():
+    print(student.name,student.school.name)
