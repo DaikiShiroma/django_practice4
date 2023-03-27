@@ -21,6 +21,14 @@ from django.db.models import Count,Max,Min,Avg,Sum
 # print(Students.objects.aggregate(counted_pk=Count("pk"),max_pk=Max("pk"),min_pk=Min("pk"),avg_pk=Avg("pk"),sum_pk=Sum("age")))
 
 #GROUP BY：ある特定のカラムで集計して合計、最大などをもとめる
-print(Students.objects.values("name").annotate(
-    Max("pk"),Min("pk")
-).query)
+# print(Students.objects.values("name").annotate(
+#     Max("pk"),Min("pk")
+# ))
+
+# print(Students.objects.values("name","age").annotate(
+#     max_id=Max("pk"),min_id=Min("pk")
+# ))
+
+for student in Students.objects.values("name","age").annotate(
+    max_id=Max("pk"),min_id=Min("pk")):
+    print(student["name"],student["max_id"])
