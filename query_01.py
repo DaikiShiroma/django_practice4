@@ -27,4 +27,6 @@ from ModelApp.models import Students
 # print(Students.objects.filter(age="17").all())
 
 # AND条件
-print(Students.objects.filter(name="太郎",pk=52).all().query)
+# print(Students.objects.filter(name="太郎",pk=52).all().query)
+print(Students.objects.filter(name="太郎",pk__lte=52).all())
+print(Students.objects.filter(name="太郎",pk__gte=52,pk__lte=60).all())
