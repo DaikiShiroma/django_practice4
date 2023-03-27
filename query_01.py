@@ -20,4 +20,9 @@ from ModelApp.models import Students
 # print(Students.objects.all()[5:8].query)
 
 # 1番最初の1件
-print(Students.objects.first())
+# print(Students.objects.first())
+
+# 等価のモノだけ絞り込む
+print(Students.objects.filter(name="太郎").all())
+print(Students.objects.filter(age="17").all())
+
