@@ -16,4 +16,8 @@ from ModelApp.models import Students
 # print(Students.objects.all()[5:])
 
 # 5～7件目
-print(Students.objects.all()[5:8])
+# print(Students.objects.all()[5:8])
+# print(Students.objects.all()[5:8].query)
+
+# 1番最初の1件
+print(Students.objects.first())
