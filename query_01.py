@@ -23,6 +23,8 @@ from ModelApp.models import Students
 # print(Students.objects.first())
 
 # 等価のモノだけ絞り込む
-print(Students.objects.filter(name="太郎").all())
-print(Students.objects.filter(age="17").all())
+# print(Students.objects.filter(name="太郎").all())
+# print(Students.objects.filter(age="17").all())
 
+# AND条件
+print(Students.objects.filter(name="太郎",pk=52).all().query)
