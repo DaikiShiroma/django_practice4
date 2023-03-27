@@ -30,3 +30,8 @@ from ModelApp.models import Students
 # print(Students.objects.filter(name="太郎",pk=52).all().query)
 print(Students.objects.filter(name="太郎",pk__lte=52).all())
 print(Students.objects.filter(name="太郎",pk__gte=52,pk__lte=60).all())
+
+# 前方一致、後方一致
+print(Students.objects.all())
+print(Students.objects.filter(name__startswith="太").all())
+print(Students.objects.filter(name__endswith="郎").all())
