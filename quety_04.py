@@ -21,5 +21,10 @@ from ModelApp.models import Students,schools
 
 print("-"*100)
 
+# 並び替え
 for student in Students.objects.order_by("school__name").all():
     print(student.name,student.school.name)
+
+# GROUP BY
+from django.db.models import Count,Max
+print(Students.objects.values("school__name").annotate(Count("id"),Max("id")))
