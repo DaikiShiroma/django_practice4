@@ -28,6 +28,9 @@ ids=[49,50,51]
 
 # 一部のカラムを取り除く
 # print(Students.objects.values("name","age").all().query)
-students=Students.objects.values("id","name","age").all()
-for student in students:
-    print(student["id"])
+# students=Students.objects.values("id","name","age").all()
+# for student in students:
+#     print(student["id"])
+
+# 並び替え
+print(Students.objects.order_by("-name","-id").all())
