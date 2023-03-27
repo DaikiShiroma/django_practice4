@@ -13,4 +13,7 @@ from ModelApp.models import Students
 # print(Students.objects.all()[:5])
 
 # 5件より後
-print(Students.objects.all()[5:])
+# print(Students.objects.all()[5:])
+
+# 5～7件目
+print(Students.objects.all()[5:8])
