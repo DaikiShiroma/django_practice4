@@ -32,6 +32,10 @@ print(Students.objects.filter(name="太郎",pk__lte=52).all())
 print(Students.objects.filter(name="太郎",pk__gte=52,pk__lte=60).all())
 
 # 前方一致、後方一致
-print(Students.objects.all())
-print(Students.objects.filter(name__startswith="太").all())
-print(Students.objects.filter(name__endswith="郎").all())
+# print(Students.objects.all())
+# print(Students.objects.filter(name__startswith="太").all())
+# print(Students.objects.filter(name__endswith="郎").all())
+
+# OR
+from django.db.models import Q
+print(Students.objects.filter(Q(name="太郎")|Q(pk__gt=52)).all())
